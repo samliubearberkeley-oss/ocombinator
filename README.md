@@ -1,4 +1,4 @@
-# Startup Directory
+# Ocombinaotor
 
 A Y Combinator-style startup directory application built with React and Tailwind CSS.
 
