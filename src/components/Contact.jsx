@@ -1,5 +1,5 @@
 import React from 'react';
-import { Linkedin, Mail, ExternalLink } from 'lucide-react';
+import { Linkedin, ExternalLink } from 'lucide-react';
 
 const Contact = ({ onClose, onBack }) => {
   return (

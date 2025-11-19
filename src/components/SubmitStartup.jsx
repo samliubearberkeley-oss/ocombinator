@@ -313,7 +313,7 @@ const SubmitStartup = ({ onClose, onBack, onPageChange, onSubmissionSuccess }) =
                 { name: 'About', page: 'about' },
                 { name: 'Startup Directory', page: 'directory' },
                 { name: 'Submit Your Startup', page: 'submit' },
-                { name: 'Community', page: 'community' },
+                { name: 'Contact', page: 'contact' },
                 { name: 'Resources', page: 'resources' }
               ].map(item => (
                 <a 

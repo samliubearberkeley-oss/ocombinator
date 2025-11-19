@@ -3,7 +3,7 @@ import { Search, MapPin, Globe, Linkedin, Twitter, Youtube, ExternalLink, Menu, 
 import { companiesAPI } from './services/api';
 import SubmitStartup from './components/SubmitStartup';
 import About from './components/About';
-import Community from './components/Community';
+import Contact from './components/Contact';
 import Resources from './components/Resources';
 
 // --- Reusable Components ---
@@ -74,7 +74,7 @@ const App = () => {
   const [isHiringOnly, setIsHiringOnly] = useState(false);
   const [selectedCompany, setSelectedCompany] = useState(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [currentPage, setCurrentPage] = useState('directory'); // 'directory', 'submit', 'about', 'community', 'resources'
+  const [currentPage, setCurrentPage] = useState('directory'); // 'directory', 'submit', 'about', 'contact', 'resources'
   
   // Data states
   const [companies, setCompanies] = useState([]);
@@ -216,7 +216,7 @@ const App = () => {
                 { name: 'About', page: 'about' },
                 { name: 'Startup Directory', page: 'directory' },
                 { name: 'Submit Your Startup', page: 'submit' },
-                { name: 'Community', page: 'community' },
+                { name: 'Contact', page: 'contact' },
                 { name: 'Resources', page: 'resources' }
               ].map(item => (
                 <a 
@@ -260,7 +260,7 @@ const App = () => {
                 { name: 'About', page: 'about' },
                 { name: 'Startup Directory', page: 'directory' },
                 { name: 'Submit Your Startup', page: 'submit' },
-                { name: 'Community', page: 'community' },
+                { name: 'Contact', page: 'contact' },
                 { name: 'Resources', page: 'resources' }
               ].map(item => (
                 <a 
@@ -305,8 +305,8 @@ const App = () => {
         />
       )}
 
-      {currentPage === 'community' && (
-        <Community 
+      {currentPage === 'contact' && (
+        <Contact 
           onClose={() => handlePageChange('directory')} 
           onBack={() => handlePageChange('directory')} 
         />
@@ -528,7 +528,7 @@ const App = () => {
                     <span className="text-white text-3xl font-bold">O</span>
                 </div>
                 <div className="hidden md:flex items-center gap-6">
-                  {['About', 'Startup Directory', 'Submit Your Startup', 'Community', 'Resources'].map(item => (
+                  {['About', 'Startup Directory', 'Submit Your Startup', 'Contact', 'Resources'].map(item => (
                     <a key={item} href="#" className="text-[15px] text-[#333] hover:text-[#f26522] font-normal">
                       {item}
                     </a>
@@ -769,7 +769,7 @@ const App = () => {
                        <span className="font-bold text-[17px] mb-1">Directory</span>
                        <a href="#" className="text-[15px] hover:text-[#f26522]">Startup Directory</a>
                        <a href="#" className="text-[15px] hover:text-[#f26522]">Startup Jobs board</a>
-                       <a href="#" className="text-[15px] hover:text-[#f26522]">Community</a>
+                       <a href="#" className="text-[15px] hover:text-[#f26522]" onClick={(e) => { e.preventDefault(); handlePageChange('contact'); }}>Contact</a>
                     </div>
                     <div className="flex flex-col gap-3">
                        <span className="font-bold text-[17px] mb-1">Resources</span>
